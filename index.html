@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>IDN to punycode converter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="punycode.js"></script>
+</head>
+  <h1>Convert IDN to punycode</h1>
+  <label for="idn">IDN: </label>
+  <input type="text" id="idn" name="idn_name"><br/>
+  <label for="punycode">punycode: </label>
+  <text id="punycode" name="puny_name"></text><br/>
+  <button onclick="convertTopunyCode()" type="button">Convert to punycode</button>
+
+
+<script>
+function convertTopunyCode() {
+  document.getElementById("punycode").innerHTML = punycode.toASCII(document.getElementById("idn").value);
+
+}
+</script>
+</html>
