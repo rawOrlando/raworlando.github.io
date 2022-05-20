@@ -9,11 +9,12 @@
 </head>
   <h1>Convert IDN to punycode</h1>
   <label for="idn">IDN: </label>
-  <input type="text" id="idn" name="idn_name"><br/>
+  <input type="text" id="idn" name="idn_name" style="width: 200px;"><br/>
   <label for="punycode">punycode: </label>
-  <input type="text" id="punycode" name="puny_name"><br/>
+  <input type="text" id="punycode" name="puny_name" style="width: 200px;"><br/>
   <button onclick="convertToPunycode()" type="button">Convert to punycode</button>
-  <button onclick="convertToIDN()" type="button">Convert to IDN</button>
+  <button onclick="convertToIDN()" type="button">Convert to IDN</button><br/>
+  <button onclick="setExample()" type="button">Example</button>
 
 
 <script>
@@ -23,6 +24,12 @@ function convertToPunycode() {
 }
 
 function convertToIDN() {
+  document.getElementById("idn").value = punycode.toUnicode(document.getElementById("punycode").value);
+
+}
+
+function setExample() {
+  document.getElementById("punycode").value = "xn--fiqs8s.icom.museum"
   document.getElementById("idn").value = punycode.toUnicode(document.getElementById("punycode").value);
 
 }
