@@ -11,13 +11,19 @@
   <label for="idn">IDN: </label>
   <input type="text" id="idn" name="idn_name"><br/>
   <label for="punycode">punycode: </label>
-  <text id="punycode" name="puny_name"></text><br/>
-  <button onclick="convertTopunyCode()" type="button">Convert to punycode</button>
+  <input type="text" id="punycode" name="puny_name"><br/>
+  <button onclick="convertToPunycode()" type="button">Convert to punycode</button>
+  <button onclick="convertToIDN()" type="button">Convert to IDN</button>
 
 
 <script>
-function convertTopunyCode() {
-  document.getElementById("punycode").innerHTML = punycode.toASCII(document.getElementById("idn").value);
+function convertToPunycode() {
+  document.getElementById("punycode").value = punycode.toASCII(document.getElementById("idn").value);
+
+}
+
+function convertToIDN() {
+  document.getElementById("idn").value = punycode.toUnicode(document.getElementById("punycode").value);
 
 }
 </script>
